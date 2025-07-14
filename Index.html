@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anime Vídeos Seguros</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><span class="logo">🌸 Anime Desenhos</span></h1>
+    <nav>
+      <button class="filter-btn active" onclick="filterCategory('todos', this)">Todos</button>
+      <button class="filter-btn" onclick="filterCategory('ação', this)">Ação</button>
+      <button class="filter-btn" onclick="filterCategory('romance', this)">Romance</button>
+      <button class="filter-btn" onclick="filterCategory('comédia', this)">Comédia</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="upload-box">
+      <h2>Envie seu vídeo</h2>
+      <form id="uploadForm" enctype="multipart/form-data" onsubmit="event.preventDefault(); uploadVideo();">
+        <label for="videoInput">Selecione um vídeo:</label>
+        <input type="file" accept="video/*" id="videoInput" />
+        <label for="videoTitle">Nome do vídeo:</label>
+        <input type="text" placeholder="Nome do vídeo" id="videoTitle" maxlength="60" />
+        <label for="videoCategory">Categoria:</label>
+        <select id="videoCategory">
+          <option value="ação">Ação</option>
+          <option value="romance">Romance</option>
+          <option value="comédia">Comédia</option>
+        </select>
+        <button type="submit">Postar Vídeo</button>
+        <div id="previewThumbnail"></div>
+      </form>
+    </section>
+
+    <section id="videoGallery" class="video-gallery" aria-live="polite">
+      <p class="empty-gallery">Nenhum vídeo enviado ainda.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Anime Desenhos. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
